@@ -6650,7 +6650,6 @@ public class MessagesController extends BaseController implements NotificationCe
             Utilities.stageQueue.cancelRunnable(currentDeleteTaskRunnable);
             currentDeleteTaskRunnable = null;
         }
-
         addSupportUser();
         AndroidUtilities.runOnUIThread(() -> {
             getNotificationCenter().postNotificationName(NotificationCenter.suggestedFiltersLoaded);
@@ -6660,36 +6659,23 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean isChatNoForwards(TLRPC.Chat chat) {
-        if (chat == null) {
-            return false;
-        }
-        if (chat.migrated_to != null) {
-            TLRPC.Chat migratedTo = getChat(chat.migrated_to.channel_id);
-            if (migratedTo != null) {
-                return migratedTo.noforwards;
-            }
-        }
-        return chat.noforwards;
+        return false;
     }
 
     public boolean isChatNoForwards(long chatId) {
-        return isChatNoForwards(getChat(chatId));
+        return false;
     }
 
     public boolean isPeerNoForwards(long dialogId) {
-        return dialogId > 0 ? isUserNoForwards(dialogId) : isChatNoForwards(-dialogId);
+        return false;
     }
 
     public boolean isUserNoForwards(long userId) {
-        return isUserNoForwards(getUserFull(userId));
+        return false;
     }
 
     public boolean isUserNoForwards(TLRPC.UserFull userFull) {
-        if (userFull == null) {
-            return false;
-        }
-
-        return userFull.noforwards_peer_enabled || userFull.noforwards_my_enabled;
+        return false;
     }
 
     public TLRPC.User getUser(Long id) {
@@ -14251,6 +14237,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 request.max_id = task.maxId;
                 req = request;
             }
+            if (true) return; // Velocity Ghost Mode
             getConnectionsManager().sendRequest(req, (response, error) -> {
                 if (error == null) {
                     if (response instanceof TLRPC.TL_messages_affectedMessages) {
@@ -14267,6 +14254,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 req.peer.chat_id = chat.id;
                 req.peer.access_hash = chat.access_hash;
                 req.max_date = task.maxDate;
+                if (true) return; // Velocity Ghost Mode
                 getConnectionsManager().sendRequest(req, (response, error) -> {
 
                 });
@@ -18173,6 +18161,8 @@ public class MessagesController extends BaseController implements NotificationCe
                 }
                 dialogs_read_outbox_max.put(dialogId, Math.max(value, update.max_id));
             } else if (baseUpdate instanceof TLRPC.TL_updateDeleteMessages) {
+                // Velocity God Mode: Anti-Delete
+                if (true) return;
                 TLRPC.TL_updateDeleteMessages update = (TLRPC.TL_updateDeleteMessages) baseUpdate;
                 if (deletedMessages == null) {
                     deletedMessages = new LongSparseArray<>();
@@ -18692,6 +18682,8 @@ public class MessagesController extends BaseController implements NotificationCe
                 }
                 dialogs_read_outbox_max.put(dialogId, Math.max(value, update.max_id));
             } else if (baseUpdate instanceof TLRPC.TL_updateDeleteChannelMessages) {
+                // Velocity God Mode: Anti-Delete
+                if (true) return;
                 TLRPC.TL_updateDeleteChannelMessages update = (TLRPC.TL_updateDeleteChannelMessages) baseUpdate;
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d(baseUpdate + " channelId = " + update.channel_id);
@@ -20816,6 +20808,10 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public SponsoredMessagesInfo getSponsoredMessages(long dialogId) {
+        return null;
+    }
+    
+    public SponsoredMessagesInfo getSponsoredMessagesInternal(long dialogId) {
         SponsoredMessagesInfo info = sponsoredMessages.get(dialogId);
         if (info != null && (info.loading || Math.abs(SystemClock.elapsedRealtime() - info.loadTime) <= 5 * 60 * 1000)) {
             return info;
