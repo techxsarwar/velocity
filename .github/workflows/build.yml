@@ -22,8 +22,21 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
+    - name: Free up disk space
+      run: |
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /opt/ghc
+        sudo rm -rf /usr/local/share/boost
+        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+        df -h
+
+    - name: Clean build
+      run: ./gradlew clean --no-daemon
+
     - name: Build with Gradle
-      run: ./gradlew assembleDebug --stacktrace --no-daemon --max-workers=2
+      env:
+        GRADLE_OPTS: "-Xmx4096m"
+      run: ./gradlew assembleDebug --stacktrace --no-daemon --max-workers=1
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
