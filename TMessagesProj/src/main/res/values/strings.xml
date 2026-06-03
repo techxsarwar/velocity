@@ -10816,4 +10816,32 @@
     <string name="AIEditorStyleSharedToManyChats_other">Sent AI Style link to **%1$d chats**.</string>
 
     <string name="GuestBotFor"> for </string>
+
+    <!-- Premium related strings -->
+    <string name="TelegramPremium">Telegram Premium</string>
+    <string name="TelegramPremiumUserStatusDialogTitle">%1$s\'s Premium Status</string>
+    <string name="TelegramPremiumUserStatusDialogSubtitle">Show off your Premium status</string>
+    <string name="TelegramPremiumUserStatusDefaultDialogTitle">%1$s\'s Premium Status</string>
+    <string name="TelegramPremiumUserGiftedPremiumOutboundDialogTitleWithPlural">Gifted %2$s to %1$s</string>
+    <string name="TelegramPremiumUserGiftedPremiumOutboundDialogSubtitle">You gifted Premium to %1$s</string>
+    <string name="TelegramPremiumUserGiftedPremiumDialogTitleWithPluralSomeone">Someone gifted you %1$s</string>
+    <string name="TelegramPremiumUserGiftedPremiumDialogSubtitle">You received a Premium gift!</string>
+    <string name="TelegramPremiumUserGiftedPremiumDialogTitleWithPlural">%1$s gifted you %2$s</string>
+    <string name="TelegramPremiumSubscribedSubtitle">You have Telegram Premium</string>
+    <string name="TelegramPremiumUserDialogTitle">%1$s has Premium</string>
+    <string name="TelegramPremiumUserDialogSubtitle">Premium features</string>
+    <string name="TelegramPremiumUserStatusCollectibleDialogTitle">%1$s\'s Premium Status</string>
+
+    <!-- Gift related strings -->
+    <string name="GiftTelegramPremiumTitle">Gift Premium</string>
+    <string name="GiftTelegramPremiumDescription">Gift Telegram Premium to %1$s</string>
+    <string name="GiftTelegramPremiumOrStarsTitle">Gift Premium or Stars</string>
+    <string name="BoostingTelegramPremiumFor">Boosting Telegram Premium for %1$s</string>
+
+    <!-- Business and other strings -->
+    <string name="TelegramBusiness">Telegram Business</string>
+    <string name="TelegramBusinessSubtitle2">Business features</string>
+    <string name="ClearTelegramCache">Clear Telegram Cache</string>
+    <string name="TelegramCacheSize">Telegram Cache: %1$s</string>
+    <string name="TelegramTones">Telegram Tones</string>
 </resources>
