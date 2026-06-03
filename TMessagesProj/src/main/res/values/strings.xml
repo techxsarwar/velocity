@@ -10844,4 +10844,27 @@
     <string name="ClearTelegramCache">Clear Telegram Cache</string>
     <string name="TelegramCacheSize">Telegram Cache: %1$s</string>
     <string name="TelegramTones">Telegram Tones</string>
+
+    <!-- Additional missing strings -->
+    <string name="ShareTelegram2">Share with Telegram</string>
+    <string name="OptimizingTelegram">Optimizing Telegram</string>
+    <string name="OptimizingTelegramDescription1">Optimizing your data...</string>
+    <string name="OptimizingTelegramDescription2">This may take a few moments</string>
+    <string name="UseProxyTelegram">Use Proxy</string>
+    <string name="UseProxyTelegramInfo">You may use a proxy to connect to Telegram if it is blocked in your country</string>
+    <string name="UseProxyTelegramInfo2">Proxy settings</string>
+    <string name="TelegramStars">Telegram Stars</string>
+    <string name="TelegramFAQ">FAQ</string>
+    <string name="TelegramFeatures">Features</string>
+    <string name="TelegramFaqUrl">https://telegram.org/faq</string>
+    <string name="TelegramFeaturesUrl">https://telegram.org/features</string>
+    <string name="TelegramVersion">Telegram v%s</string>
+    <string name="TelegramPassport">Telegram Passport</string>
+    <string name="TelegramPassportCreatePasswordInfo">Set a password to protect your personal data</string>
+    <string name="TelegramPassportCreatePassword">Create Password</string>
+    <string name="TelegramPassportDelete">Delete Passport</string>
+    <string name="TelegramPassportDeleteTitle">Delete Telegram Passport?</string>
+    <string name="TelegramPassportDeleteAlert">Are you sure you want to delete your Telegram Passport data?</string>
+    <string name="MapPreviewProviderTelegram">Telegram</string>
+    <string name="EnterYourTelegramPasscode">Enter your Telegram passcode</string>
 </resources>
