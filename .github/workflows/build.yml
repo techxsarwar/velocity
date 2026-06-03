@@ -42,7 +42,6 @@ jobs:
     - name: Build with Gradle
       env:
         GRADLE_OPTS: "-Xmx4096m"
-        JAVA_HOME: ${{ env.JAVA_HOME }}
       run: ./gradlew assembleDebug --stacktrace --no-daemon --max-workers=1
 
     - name: Upload APK
