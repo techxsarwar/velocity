@@ -27,7 +27,7 @@ public class BuildVars {
     public static String BUILD_VERSION_STRING = BuildConfig.BUILD_VERSION_STRING;
 
     public static int APP_ID = 39080593;
-    public static String APP_HASH = "5DDAD2A50720CBF80D51A87933F096FD";
+    public static String APP_HASH = "5ddad2a50720cbf80d51a87933f096fd";
 
     // SafetyNet key for Google Identity SDK, set it to empty to disable
     public static String SAFETYNET_KEY = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
@@ -41,7 +41,7 @@ public class BuildVars {
     public static boolean IS_BILLING_UNAVAILABLE = false;
 
     // works only on official app ids, disable on your forks
-    public static boolean SUPPORTS_PASSKEYS = true;
+    public static boolean SUPPORTS_PASSKEYS = false;
 
     public static boolean USE_LEGACY_SYSTEM_INSETS = false;
 
